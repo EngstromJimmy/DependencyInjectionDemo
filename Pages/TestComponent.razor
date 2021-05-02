@@ -1,0 +1,31 @@
+﻿<h3>@Text</h3>
+@using DependencyInjectionDemo.Services
+@inject IBaseClass Singelton
+@inject TransientClass Transient
+@inject ScopedClass Scoped
+
+<h3>Transient</h3>
+@Transient.GetDate()
+<br />
+@Transient.GetInt()
+<br />
+<h3>Scoped</h3>
+@Scoped.GetDate()
+<br />
+@Scoped.GetInt()
+<br />
+<h3>Singelton</h3>
+@Singelton.GetDate()
+<br />
+@Singelton.GetInt()
+<br />
+
+@code {
+    [Parameter]
+    public string Text { get; set; }
+
+    public void apa()
+    {
+        Singelton.Refresh();
+    }
+}

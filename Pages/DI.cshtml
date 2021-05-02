@@ -1,0 +1,15 @@
+﻿@page
+@model DependencyInjectionDemo.Pages.DIModel
+Transient: @Model.Transient.GetDate() </br>
+Scoped: @Model.Scoped.GetDate()</br>
+Singelton: @Model.Singelton.GetDate()</br>f
+
+<component type="typeof(TestComponent)" render-mode="Static" Param-text='"Component 1"' />
+<hr />
+<component type="typeof(TestComponent)" render-mode="Static" Param-text='"Component 2"'/>
+<hr />
+<component type="typeof(TestComponent)" render-mode="Static" Param-text='"Component 3"'/>
+<hr />
+
+@{
+}
